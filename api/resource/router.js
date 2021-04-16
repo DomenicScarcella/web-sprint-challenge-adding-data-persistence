@@ -12,12 +12,12 @@ router.get('/', (req, res, next) => {
 // POST
 router.post('/', async (req, res, next) => {
     try {
-        const { project_name, project_completed } = req.body;
-        if (!project_name || !project_completed) {
-            res.status(404).json({ message: 'Project Name and Completed are required' });
+        const { resource_name } = req.body;
+        if (!resource_name) {
+            res.status(404).json({ message: 'Resource Name is required' });
         } else {
-            const project = await Project.pPost(req.body);
-            res.status(201).json(project);
+            const resource = await Resource.rPost(req.body);
+            res.status(201).json(resource);
         }
     } catch (err) {
         next(err);
