@@ -12,11 +12,11 @@ _Sprint challenges open at Midnight PST on Thursday and close at 5pm PST on Frid
 
 ## Project Set Up
 
-- [ ] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
-- [ ] Open the assignment in Canvas and click on the "Set up git" option.
-- [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key.
-- [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
-- [ ] Check to see that Codegrade has accepted your git submission.
+- [x ] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
+- [x ] Open the assignment in Canvas and click on the "Set up git" option.
+- [x ] Follow instructions to set up Codegrade's Webhook and Deploy Key.
+- [x ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
+- [x ] Check to see that Codegrade has accepted your git submission.
 
 For a step-by-step on setting up Codegrade see [this guide.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
 
@@ -101,18 +101,32 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission format
 
-- [ ] Submit via Codegrade by committing and pushing any new changes.
-- [ ] Create a pull request to merge `<firstName-lastName>` branch into `main`.
-- [ ] Please don't merge your own pull request and make sure **you are on your own repo**.
-- [ ] Check Codegrade for automated feedback.
-- [ ] Check Codegrade on Monday following the Sprint Challenge for reviewer feedback.
-- [ ] Any changes pushed after the deadline will not receive any feedback.
+- [x ] Submit via Codegrade by committing and pushing any new changes.
+- [x ] Create a pull request to merge `<firstName-lastName>` branch into `main`.
+- [x ] Please don't merge your own pull request and make sure **you are on your own repo**.
+- [x ] Check Codegrade for automated feedback.
+- [x ] Check Codegrade on Monday following the Sprint Challenge for reviewer feedback.
+- [x ] Any changes pushed after the deadline will not receive any feedback.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain the difference between Relational Databases and SQL.
+
+SQL provides a graphical user interface for the data, rather than a command line display if you're using the raw database in a code editor.
+
+
 2. Why do tables need a Primary Key?
+
+To serve as a unique identifier for each row.
+
+
 3. What is the name given to a table column that references the Primary Key on another table?
+
+Foreign Key.
+
+
 4. What do we need in order to have a _many to many_ relationship between two tables?
+
+An Intermediary Table.
