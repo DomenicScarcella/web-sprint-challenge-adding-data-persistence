@@ -1,17 +1,31 @@
 // build your `/api/projects` router here
-const pRouter = require('express').Router();
+const router = require('express').Router();
 const Project = require('./model.js');
 
-pRouter.get('/', (req, res, next) => {
-    Project.tGet()
+// GET
+router.get('/', (req, res, next) => {
+    Project.pGet()
         .then(projects => { res.status(200).json(projects); })
         .catch(next);
 });
 
+// POST
+router.post('/', async (req, res, next) => {
+    try {
+        const { project_name, project_completed } = req.body;
+        if (!project_name || !project_completed) {
+            res.status(404).json({ message: 'Project Name and Completed are required' });
+        } else {
+            const project = await Project.pPost(req.body);
+            res.status(201).json(project);
+        }
+    } catch (err) {
+        next(err);
+    }
+});
 
-
-
-pRouter.use((err, req, res, next) => {
+// error catch-all
+router.use((err, req, res, next) => {
     res.status(500).json({
         customMessage: 'Something went wrong in projects router',
         message: err.message,
@@ -19,4 +33,4 @@ pRouter.use((err, req, res, next) => {
     });
 });
 
-module.exports = pRouter;
+module.exports = router;

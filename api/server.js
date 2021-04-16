@@ -12,8 +12,8 @@ server.use('/api/projects', pRouter);
 server.use('/api/resources', rRouter);
 server.use('/api/tasks', tRouter);
 
-server.use('*', (req, res) => {
-    res.json({ api: 'up' });
-});
+// server.get('/', (req, res) => {
+//     res.json({ api: 'up' });
+// });
 
 module.exports = server;
