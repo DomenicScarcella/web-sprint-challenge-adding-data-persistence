@@ -12,4 +12,12 @@ server.use('/api/projects', pRouter);
 server.use('/api/resources', rRouter);
 server.use('/api/tasks', tRouter);
 
+server.use((err, req, res, next) => {
+    res.status(500).json({
+        customMessage: 'Something went wrong',
+        message: err.message,
+        stack: err.stack,
+    });
+});
+
 module.exports = server;

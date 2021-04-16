@@ -2,13 +2,10 @@
 const pRouter = require('express').Router();
 const Project = require('./model.js');
 
-pRouter.get('/', async (req, res, next) => {
-    try {
-        const projects = await Project.pGet();
-        res.status(200).json(projects);
-    } catch (err) {
-        next(err);
-    }
+pRouter.get('/', (req, res, next) => {
+    Project.tGet()
+        .then(projects => { res.status(200).json(projects); })
+        .catch(next);
 });
 
 

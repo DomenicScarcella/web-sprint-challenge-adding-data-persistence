@@ -2,13 +2,10 @@
 const tRouter = require('express').Router();
 const Task = require('./model.js');
 
-tRouter.get('/', async (req, res, next) => {
-    try {
-        const tasks = await Task.tGet();
-        res.status(200).json(tasks);
-    } catch (err) {
-        next(err);
-    }
+tRouter.get('/', (req, res, next) => {
+    Task.tGet()
+        .then(tasks => { res.status(200).json(tasks); })
+        .catch(next);
 });
 
 

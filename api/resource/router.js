@@ -2,13 +2,10 @@
 const rRouter = require('express').Router();
 const Resource = require('./model.js');
 
-rRouter.get('/', async (req, res, next) => {
-    try {
-        const resources = await Resource.rGet();
-        res.status(200).json(resources);
-    } catch (err) {
-        next(err);
-    }
+rRouter.get('/', (req, res, next) => {
+    Resource.tGet()
+        .then(resources => { res.status(200).json(resources); })
+        .catch(next);
 });
 
 
