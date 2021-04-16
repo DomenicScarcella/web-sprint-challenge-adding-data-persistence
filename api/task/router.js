@@ -10,4 +10,13 @@ tRouter.get('/', (req, res, next) => {
 
 
 
+
+tRouter.use((err, req, res, next) => {
+    res.status(500).json({
+        customMessage: 'Something went wrong in tasks router',
+        message: err.message,
+        stack: err.stack,
+    });
+});
+
 module.exports = tRouter;

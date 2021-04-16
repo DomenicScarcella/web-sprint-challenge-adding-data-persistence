@@ -10,4 +10,13 @@ rRouter.get('/', (req, res, next) => {
 
 
 
+
+rRouter.use((err, req, res, next) => {
+    res.status(500).json({
+        customMessage: 'Something went wrong in resources router',
+        message: err.message,
+        stack: err.stack,
+    });
+});
+
 module.exports = rRouter;

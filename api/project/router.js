@@ -10,4 +10,13 @@ pRouter.get('/', (req, res, next) => {
 
 
 
+
+pRouter.use((err, req, res, next) => {
+    res.status(500).json({
+        customMessage: 'Something went wrong in projects router',
+        message: err.message,
+        stack: err.stack,
+    });
+});
+
 module.exports = pRouter;
